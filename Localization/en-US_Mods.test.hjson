@@ -1,0 +1,102 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	test: {
+		DisplayName: test
+		Tooltip: ""
+	}
+
+	VineBow: {
+		Tooltip: A bow which got consumed by nature
+		DisplayName: Vine Bow
+	}
+
+	HamPiXe: {
+		Tooltip: "'what if I mix all of my tools?'"
+		DisplayName: HamPiXe
+	}
+
+	TeslaStaff: {
+		DisplayName: Tesla Staff
+		Tooltip:
+			'''
+			Shoots an electric projectile that paralizes enemies every 3 seconds.
+			ElectroBoom went mad! Even more than usual!
+			'''
+	}
+
+	EnergyBall: {
+		DisplayName: Energy Ball
+		Tooltip: ""
+	}
+
+	LStar: {
+		DisplayName: L-Star
+		Tooltip:
+			'''
+			Shoots an slow but powerfull Energy Ball 
+			Uses 'Energy Ball' as ammo
+			'''
+	}
+
+	PilotHelmet: {
+		DisplayName: Pilot Helmet
+		Tooltip: Increases ranged damage by 12%
+	}
+
+	PilotArmor: {
+		DisplayName: Pilot Breastplate
+		Tooltip:
+			'''
+			Increases ranged damage by 4% 
+			Gives an 25% chance to not consume ammo (does not stack)
+			'''
+	}
+
+	PilotLeggings: {
+		DisplayName: Pilot Leggings
+		Tooltip:
+			'''
+			Increases ranged damage by 4%
+			Increses movement speed by 17%
+			Increase critical strike chance by 9%
+			'''
+	}
+
+	PlasmaCutter: {
+		Tooltip: ""
+		DisplayName: Plasma Cutter
+	}
+
+	MinionBossRelic: {
+		DisplayName: Minion Boss Relic
+		Tooltip: ""
+	}
+}
+
+Projectiles: {
+	ShockProjectile.DisplayName: Shock Projectile
+	EnergyBall.DisplayName: Energy Ball
+	PlasmaLaser.DisplayName: Plasma Laser
+	MinionBossEye.DisplayName: Minion Boss Eye
+	LaserTelegraph.DisplayName: Laser Telegraph
+	Laser.DisplayName: Laser
+	KamExplosion.DisplayName: Kam Explosion
+	CrossLaserProj.DisplayName: Cross Laser Proj
+	CrossExplosion.DisplayName: Cross Explosion
+	BossEnergyBall.DisplayName: Boss Energy Ball
+}
+
+Buffs: {
+	Paralized: {
+		DisplayName: Paralized
+		Description: Decreases movement speed by 30%
+	}
+}
+
+NPCs: {
+	MinionBossBody.DisplayName: Minion Boss Body
+	MinionBossMinion.DisplayName: Minion Boss Minion
+	RobotBoss.DisplayName: Robot Boss
+	Kamikaze.DisplayName: Kamikaze
+}
