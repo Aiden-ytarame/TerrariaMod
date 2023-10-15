@@ -22,13 +22,13 @@ namespace test.Npcs.Boss.Robot.Assets
 		{
             Projectile.width = 10;
             Projectile.height = 10;
-            Projectile.damage = 100;
             Projectile.friendly = false;
             Projectile.hostile = true;
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;
             Projectile.timeLeft = 45;
             Projectile.hide = true;
+            CooldownSlot = ImmunityCooldownID.Bosses;
         }
 
         public override string Texture => "Terraria/Images/Projectile_650";

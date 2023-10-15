@@ -25,7 +25,8 @@ namespace test.Npcs.Boss.Robot
 			Projectile.timeLeft = 30;
 			Projectile.ignoreWater = true;
 			Projectile.hide = true;
-		}
+            CooldownSlot = ImmunityCooldownID.Bosses;
+        }
 
      
         public override bool? Colliding(Rectangle projHitbox, Rectangle targetHitbox)

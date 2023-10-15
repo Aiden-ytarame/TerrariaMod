@@ -85,6 +85,8 @@ Projectiles: {
 	CrossLaserProj.DisplayName: Cross Laser Proj
 	CrossExplosion.DisplayName: Cross Explosion
 	BossEnergyBall.DisplayName: Boss Energy Ball
+	LaserSword.DisplayName: Laser Sword
+	BlockArena.DisplayName: Block Arena
 }
 
 Buffs: {
@@ -99,4 +101,6 @@ NPCs: {
 	MinionBossMinion.DisplayName: Minion Boss Minion
 	RobotBoss.DisplayName: Robot Boss
 	Kamikaze.DisplayName: Kamikaze
+	LaserHolder.DisplayName: Laser Holder
+	Phase3Platform.DisplayName: Phase3 Platform
 }

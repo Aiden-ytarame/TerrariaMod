@@ -14,7 +14,7 @@ namespace test.Items
 
 		public override void SetDefaults()
 		{
-            Item.damage = 140;
+            Item.damage = 300;
             Item.noMelee = true;
             Item.DamageType = DamageClass.Magic;
            // Item.channel = true; //Channel so that you can held the weapon [Important]
@@ -30,6 +30,7 @@ namespace test.Items
             Item.shootSpeed = 1f;
             Item.shoot = ModContent.ProjectileType<PlasmaLaser>();
             Item.value = Item.sellPrice(silver: 3);
+            Item.autoReuse = true;
         }
         public override Vector2? HoldoutOffset()
         {

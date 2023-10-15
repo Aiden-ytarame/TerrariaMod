@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "KZy1BlnpmJ7a0IvrJvvrzXujw5BlIkvmRZ7zfuT4/nQC33jIgBiv7daaiEpOzlXZuBsjcOxaulkHeO3J292GzQ==",
+  "dgSpecHash": "gGAFKQox14IhAKbPfiDr2Z6fnI0Vi5G/80h12NE9La0x+cVxmsYgJdSw8aXqmQigqOwGABVHG8wG26B084l62g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aiden\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\test\\test.csproj",
+  "projectFilePath": "C:\\Users\\vagne\\OneDrive\\Documentos\\My Games\\Terraria\\tModLoader\\ModSources\\test\\test.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\aiden\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
+    "C:\\Users\\vagne\\.nuget\\packages\\tmodloader.codeassist\\0.1.5\\tmodloader.codeassist.0.1.5.nupkg.sha512"
   ],
   "logs": []
 }

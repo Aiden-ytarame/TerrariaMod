@@ -25,8 +25,9 @@ namespace test.Npcs.Boss.Robot.Assets
 			Projectile.light = 0.3f;
 			Projectile.ignoreWater = true;
 			Projectile.tileCollide = false;
-		
-		}
+            CooldownSlot = ImmunityCooldownID.Bosses;
+
+        }
 
         public override void AI()
         {

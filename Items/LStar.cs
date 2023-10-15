@@ -14,7 +14,7 @@ namespace test.Items
 
 		public override void SetDefaults()
 		{
-			Item.damage = 49;
+			Item.damage = 100000;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 40;
 			Item.height = 40;

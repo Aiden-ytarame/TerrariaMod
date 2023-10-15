@@ -7,13 +7,15 @@ using System.Diagnostics;
 using test.Buffs;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
+using Terraria.DataStructures;
 
 namespace test.Npcs.Boss.Robot.Assets
 {
 	public class Laser : ModProjectile
 	{
+        bool startup = true;
         Texture2D tex;
-        float decreaseOT = 0;
+        float widthMult = 1;
         public float size = 10;
         List<Vector2> oldVelocity = new List<Vector2>();
         List<Vector2> oldV;
@@ -32,29 +34,45 @@ namespace test.Npcs.Boss.Robot.Assets
             Projectile.penetrate = -1;
             Projectile.tileCollide = false;
             Projectile.timeLeft = 30;
-            decreaseOT = 1f / Projectile.timeLeft;
+            Projectile.ai[2] = 1f / Projectile.timeLeft;
+            CooldownSlot = ImmunityCooldownID.Bosses;
             tex = ModContent.Request<Texture2D>(Texture, ReLogic.Content.AssetRequestMode.ImmediateLoad).Value;
         }
+ 
 
-        float widthMult = 1;
         public override bool PreDraw(ref Color lightColor)
         {
-            if (Projectile.ai[0] == 0)
-                Projectile.ai[0] = 10;
-
-            if (Projectile.localAI[0] == 0 && Projectile.ai[1] > 0)
+            if (startup)
             {
-                decreaseOT = 1f / Projectile.timeLeft;
-                Projectile.localAI[0] = Projectile.timeLeft;
-                Projectile.timeLeft = (int)((float)Projectile.timeLeft * 1.5f);
-                
+                if (Projectile.ai[2] != -1)
+                    Projectile.ai[2] = 1f / Projectile.timeLeft;
+                else
+                    Projectile.ai[2] = 0;
+
+                if (Projectile.ai[0] == 0)
+                    Projectile.ai[0] = 10;
+
+
+                if (Projectile.localAI[0] == 0 && Projectile.ai[1] > 0)
+                {
+
+                    Projectile.localAI[0] = Projectile.timeLeft;
+                    Projectile.timeLeft = (int)((float)Projectile.timeLeft * 1.5f);
+
+                }
+                startup = false;
             }
+
+
             Vector2 pos = Projectile.Center - Main.screenPosition;
-            Main.spriteBatch.Draw(tex, pos, null, new Color(255, 255, 0), Projectile.velocity.ToRotation(), new Vector2(0, 1), new Vector2(3000, Projectile.ai[0] * widthMult), 0, 0);
-            
+
+            Main.EntitySpriteDraw(tex, pos, null, new Color(255, 255, 0), Projectile.velocity.ToRotation(), new Vector2(0, 1), new Vector2(3000, Projectile.ai[0] * widthMult), 0, 0);
+
+
+
             float afterImgScale = widthMult;
             if(!Main.gamePaused || !Main.autoPause)
-                widthMult -= decreaseOT;
+                widthMult -= Projectile.ai[2];
 
             if (Projectile.ai[1] > 0)
             {
@@ -66,7 +84,7 @@ namespace test.Npcs.Boss.Robot.Assets
 
                     color = new Color(130, 130, 0, 1) * (((float)(oldV.Count - i) / (float)oldV.Count) - 0.4f);
                     Main.EntitySpriteDraw(tex, pos, null, color, oldV[i].ToRotation(), new Vector2(0, 1), new Vector2(3000, Projectile.ai[0] * afterImgScale), 0, 0);
-                    afterImgScale += decreaseOT;
+                    afterImgScale += Projectile.ai[2];
                 }
                 if (!Main.gamePaused || !Main.autoPause)
                     oldVelocity.Add(Projectile.velocity);
@@ -86,7 +104,7 @@ namespace test.Npcs.Boss.Robot.Assets
             }
             Vector2 unit = Projectile.velocity;
             float point = 0f;
-            return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), Projectile.Center, Projectile.Center + unit * 3000, 20, ref point);
+            return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), Projectile.Center, Projectile.Center + unit * 3000, Projectile.ai[0] * widthMult, ref point);
         }
         public override bool ShouldUpdatePosition() => false;
       
